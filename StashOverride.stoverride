@@ -1,5 +1,5 @@
-name: Shawn Customize Test
-desc: Shawn 的自定义规则 测试
+name: Shawn Customize
+desc: Shawn customize config file, dns copied from nloli.
 
 hosts:
   mtalk.google.com: 108.177.125.188
