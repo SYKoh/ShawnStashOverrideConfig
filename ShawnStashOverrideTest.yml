@@ -70,14 +70,14 @@ dns:
   fallback:
     - https://101.101.101.101/dns-query
     - https://public.dns.iij.jp/dns-query
-    - https://208.67.220.220/dns-query]
+    - https://208.67.220.220/dns-query
   fallback-filter:
     geoip: true
     ipcidr:
       - 240.0.0.0/4
       - 0.0.0.0/32
       - 127.0.0.1/32
-      - 223.75.236.241/32]
+      - 223.75.236.241/32
       - domain:
           - '+.paoluz.com'
           - '+.paoluz.link'
