@@ -95,19 +95,39 @@ dns:
     }
 
 proxy-groups:
-
-  - name: 🇭🇰 香港B节点
-    interval: 600
-    proxies: 
-    type: url-test
-    url: "http://www.gstatic.com/generate_204"
-    use:
+  - name: 🇯🇵 日本手动
+    type: select
+    proxies:
+      - 🇯🇵 B20 日本*
+      - 🇯🇵 B21 日本*
+      - 🇯🇵 B22 日本*
+  - name: 🇺🇲 美国手动
+    type: select
+    proxies:
+      - 🇺🇲 B40 美国*
+      - 🇺🇲 D40 美国*
+      - 🇺🇲 D41 美国*
+      - 🇺🇲 D42 美国*
+      - 🇺🇲 D43 美国*
+  - name: 💰 Salesfoce
+    type: select
+    proxies:
+      - 🚀 节点选择
       - 🇭🇰 香港节点
-    filter: "(?=.*(港|HK|(?i)Hong))^((?!(台湾|日本|新加坡|美国|韩国|狮城|南朝鲜|US|SG|JP|KR|TW|台灣|美國|韓國|獅城|D)).)*$"
-
-  - name: 🚀 节点选择
-    proxies: 
-      - 🇭🇰 香港B节点
+      - 🇯🇵 日本节点
+      - 🇯🇵 日本手动
+      - 🇺🇲 美国节点
+      - 🇺🇲 美国手动
+      - 🚀 手动切换
+      - DIRECT
+  - name: 💬 Skype
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - 🇭🇰 香港节点
+      - 🇺🇲 美国节点
+      - 🚀 手动切换
+      - DIRECT
 
 rules:
   - DOMAIN-SUFFIX,force.com,💰 Salesfoce
