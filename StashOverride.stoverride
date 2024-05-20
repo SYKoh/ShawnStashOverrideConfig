@@ -106,6 +106,7 @@ proxy-groups:
     filter: "(?=.*(港|HK|(?i)Hong))^((?!(台湾|日本|新加坡|美国|韩国|狮城|南朝鲜|US|SG|JP|KR|TW|台灣|美國|韓國|獅城|D)).)*$"
 
   - name: 🚀 节点选择
+    type: select
     proxies: 
       - 🇭🇰 香港B节点
 
