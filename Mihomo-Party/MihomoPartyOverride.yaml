@@ -1,0 +1,41 @@
+# https://mihomo.party/docs/guide/override/yaml
+
+proxy-groups+:
+  - name: 🇺🇸 美国B节点
+    interval: 1800
+    lazy: true
+    tolerance: 50
+    include-all-proxies: true
+    proxies:
+    type: url-test
+    url: "http://www.gstatic.com/generate_204"
+    filter: "(?=.*(美国|US))^((?!(台湾|日本|韩国|香港|狮城|南朝鲜|HK|SG|JP|KR|TW|台灣|韓國|香港|獅城|D|家宽)).)*$"
+
+  - name: 🇭🇰 香港B节点
+    interval: 1800
+    lazy: true
+    tolerance: 50
+    include-all-proxies: true
+    proxies:
+    type: url-test
+    url: "http://www.gstatic.com/generate_204"
+    filter: "(?=.*(港|HK|(?i)Hong))^((?!(台湾|日本|新加坡|美国|韩国|狮城|南朝鲜|US|SG|JP|KR|TW|台灣|美國|韓國|獅城|D|无痕|边缘|厦)).)*$"
+
+  - name: 🇸🇬 狮城B节点
+    interval: 1800
+    lazy: true
+    include-all-proxies: true
+    proxies:
+    tolerance: 50
+    type: url-test
+    url: "http://www.gstatic.com/generate_204"
+    filter: "(?=.*(新加坡|SG))^((?!(台湾|日本|美国|韩国|香港|南朝鲜|US|HK|JP|KR|TW|台灣|美國|韓國|香港|D|Y)).)*$"
+
++rules:
+  - DOMAIN-SUFFIX,outlook.com,DIRECT
+  - DOMAIN-SUFFIX,msauth.net,DIRECT
+  - DOMAIN-SUFFIX,account.microsoft.com,DIRECT
+  - DOMAIN-SUFFIX,login.live.com,DIRECT
+  - DOMAIN-SUFFIX,poe.com,🇺🇸 美国B节点
+  - DOMAIN-SUFFIX,aistudio.google.com,🇺🇸 美国B节点
+  - DOMAIN-SUFFIX,claw.cloud,🇸🇬 狮城B节点
