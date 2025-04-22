@@ -31,11 +31,35 @@ proxy-groups+:
     url: "http://www.gstatic.com/generate_204"
     filter: "(?=.*(新加坡|SG))^((?!(台湾|日本|美国|韩国|香港|南朝鲜|US|HK|JP|KR|TW|台灣|美國|韓國|香港|D|Y)).)*$"
 
+  - name: 🇯🇵 日本B节点
+    interval: 1800
+    lazy: true
+    include-all-proxies: true
+    proxies:
+    tolerance: 50
+    type: url-test
+    url: "http://www.gstatic.com/generate_204"
+    filter: "(?=.*(日本|JP))^((?!(台湾|新加坡|美国|韩国|香港|南朝鲜|US|HK|SG|KR|TW|台灣|美國|韓國|香港|D|Y)).)*$"
+
 +rules:
+  - DOMAIN-SUFFIX,force.com,🇯🇵 日本B节点
+  - DOMAIN-SUFFIX,salesforce.com,🇯🇵 日本B节点
+  - DOMAIN-SUFFIX,mulesoft.com,🇯🇵 日本B节点
+  - DOMAIN-SUFFIX,pardot.com,🇯🇵 日本B节点
+  - DOMAIN-SUFFIX,heroku.com,🇯🇵 日本B节点
+  - DOMAIN-SUFFIX,herokuapp.com,🇯🇵 日本B节点
+  - DOMAIN-SUFFIX,tableau.com,🇯🇵 日本B节点
+  - DOMAIN-SUFFIX,quip.com,🇯🇵 日本B节点
+  - DOMAIN-SUFFIX,salesforceliveagent.com,🇯🇵 日本B节点
   - DOMAIN-SUFFIX,outlook.com,DIRECT
   - DOMAIN-SUFFIX,msauth.net,DIRECT
   - DOMAIN-SUFFIX,account.microsoft.com,DIRECT
   - DOMAIN-SUFFIX,login.live.com,DIRECT
+  - DOMAIN-SUFFIX,skype.com,🇺🇸 美国B节点
   - DOMAIN-SUFFIX,poe.com,🇺🇸 美国B节点
   - DOMAIN-SUFFIX,aistudio.google.com,🇺🇸 美国B节点
+  - DOMAIN-SUFFIX,gemini.google.com,🇺🇸 美国B节点
+  - DOMAIN-SUFFIX,chatgpt.com,🇺🇸 美国B节点
+  - DOMAIN-KEYWORD,openai,🇺🇸 美国B节点
   - DOMAIN-SUFFIX,claw.cloud,🇸🇬 狮城B节点
+  - DOMAIN-SUFFIX,yande.re,🇯🇵 日本B节点
